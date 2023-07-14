@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --textSecondary: #3977f1;
+  --textPrimary: #2d2d2d;
+  --primaryColor: #fff;
+  --secondaryColor: #f8f9fd;
+  --tertionaryColor: #515151;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+  text-decoration: none;
+  border: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primaryColor);
+  color: var(--textPrimary);
+  overflow-y: hidden;
+}
+
+a {
+  color: var(--tertionaryColor);
+}
+.container {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: [side-str] 25rem [side-end content-str] 1fr [content-end];
+}
+
+/*--------------------- HEADER STYLE -----------*/
+
+.header {
+  grid-column: side-str / content-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem;
+}
+
+.welcome h1.heading-1 {
+  font-size: 3rem;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.welcome h1.heading-1 > .name {
+  font-weight: 500;
+}
+
+.native {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.native > .avator {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  border: 1px solid var(--textSecondary);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/*--------------------- SIDEBAR STYLE -----------*/
+.aside {
+  background-color: transparent;
+  grid-column: side-str / side-end;
+  height: 100vh;
+  border-right: 2px solid var(--secondaryColor);
+  margin-right: 2rem;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+    justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 70% 20%;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.aside .top {
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+  padding: 2rem;
+}
+
+.aside .top .top-logo {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.aside .top .top-logo span {
+  color: var(--textSecondary);
+  font-style: italic;
+}
+
+.aside .sidebar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.sidebar-list > a:link,
+.sidebar-list > a:active {
+  background-color: fff;
+  display: flex;
+  align-items: center;
+  width: inherit;
+  padding: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: var(--tertionaryColor);
+  text-transform: capitalize;
+  transition: all 0.3s ease-in;
+}
+
+.sidebar-list > a:hover,
+.active {
+  color: var(--textSecondary);
+  background-color: var(--secondaryColor);
+}
+.sidebar-list .link > span:nth-last-child(1) {
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.aside .bottom-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: 500;
+  color: var(--tertionaryColor);
+}
+.aside .bottom-side:hover {
+  color: var(--textSecondary);
+}
+
+.aside .bottom-side > .logout {
+  margin-left: 1rem;
+  font-size: 1.8rem;
+}
+
+/*--------------------- MAIN CONTENT STYLE -----------*/
+
+.content {
+  grid-column: content-str / content-end;
+  padding: 5rem;
+}
+
+/*--------------------- MEDIA QUERY  -----------*/
